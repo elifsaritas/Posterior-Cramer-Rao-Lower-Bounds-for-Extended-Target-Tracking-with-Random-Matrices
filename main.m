@@ -1,5 +1,5 @@
 % Implementation of PCRLB recursion for target state (both kinematic and extent states) in 
-% E. Sar?ta? and U. Orguner, “Posterior Cramer-Rao Lower Bounds for Extended Target Tracking with Random Matrices,” 
+% E. Saritas and U. Orguner, “Posterior Cramer-Rao Lower Bounds for Extended Target Tracking with Random Matrices,” 
 % in Proceedings of 19th International Conference on Information Fusion (FUSION'16), Jul. 2016.
 
 clear;

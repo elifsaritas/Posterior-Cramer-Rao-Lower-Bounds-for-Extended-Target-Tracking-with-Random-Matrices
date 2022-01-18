@@ -1,27 +1,27 @@
 function [posCRLB] = ETT_PCRLB(runTime,MCRun,model,measProcess)
 % Implementation of PCRLB recursion for target state (both kinematic and extent states) in 
-% E. Sar?ta? and U. Orguner, “Posterior Cramer-Rao Lower Bounds for Extended Target Tracking with Random Matrices,” 
+% E. Saritas and U. Orguner, “Posterior Cramer-Rao Lower Bounds for Extended Target Tracking with Random Matrices,” 
 % in Proceedings of 19th International Conference on Information Fusion (FUSION'16), Jul. 2016.
 % INPUTS:
 % T: 1x1, sampling time
 % runTime: 1x1 duration of the scenario
 % MCRun: 1x1, number of Monte Carlo runs
 % model: a structure describing the motion model with fields
-%   -model.T: 1x1, sampling time
-%   -model.F: 4x4, state transition model
-%   -model.B: 4x2, the gain matrix for process noise
-%   -model.Q: 2x2, covariance of the process noise
-%   -model.H: 2x4, measurement model
-%   -model.R: 2x2, covariance of the measurement noise
-%   -model.s: 1x1, scaling factor
-%   -model.n0: 1x1, initial degree of freedom used for the initilization
+%   model.T: 1x1, sampling time
+%   model.F: 4x4, state transition model
+%   model.B: 4x2, the gain matrix for process noise
+%   model.Q: 2x2, covariance of the process noise
+%   model.H: 2x4, measurement model
+%   model.R: 2x2, covariance of the measurement noise
+%   model.s: 1x1, scaling factor
+%   model.n0: 1x1, initial degree of freedom used for the initilization
 %                  of the posterior CRLB
-%   -model.n: 1x1, degree of freedom 
-%   -model.angle: 1x1, fixed orientation angle in degrees
-%   -model.semiMajor: 1x1, extent semi-major axis length
-%   -model.semiMinor: 1x1, extent semi-minor axis length
+%   model.n: 1x1, degree of freedom 
+%   model.angle: 1x1, fixed orientation angle in degrees
+%   model.semiMajor: 1x1, extent semi-major axis length
+%   model.semiMinor: 1x1, extent semi-minor axis length
 % measProcess: a structure describing measurement process with the field
-%   -measProcess.mbar: 1x1, expected number of measurements
+%   measProcess.mbar: 1x1, expected number of measurements
 % OUTPUTS:
 % posCRLB: a structure containing posterior CRLB's for kinematic and extent
 %          states together with the bound on semi-major and semi-minor axes 
